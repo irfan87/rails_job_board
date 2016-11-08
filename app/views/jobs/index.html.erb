@@ -1,6 +1,7 @@
 <div>
 	<%= link_to 'New Job', new_job_path %>
 	<h2>Jobs List</h2>
+	<% if @jobs.exists? %>
 	<ul>
 		<% @jobs.each do |job| %>
 		<li>
@@ -9,4 +10,9 @@
 		</li>
 		<% end %>
 	</ul>
+	<% else %>
+		<p>
+			There is no job posts
+		</p>
+	<% end %>
 </div>
