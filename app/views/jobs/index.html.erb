@@ -1,0 +1,12 @@
+<div>
+	<%= link_to 'New Job', new_job_path %>
+	<h2>Jobs List</h2>
+	<ul>
+		<% @jobs.each do |job| %>
+		<li>
+			<%= link_to job.job_title, job_path(job) %>
+			<%= link_to 'Delete this job', job_path(job), method: :delete, data: {confirm: 'Are you sure want to delete this job?'} %>
+		</li>
+		<% end %>
+	</ul>
+</div>
