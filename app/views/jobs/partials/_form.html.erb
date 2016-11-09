@@ -10,22 +10,25 @@
 		</div>
 	<% end %>
 </div>
-<div>
-	<%= form_for @job do |f| %>
-	<div>
-		<%= f.label :job_title%>
-		<%= f.text_field :job_title %>
+<div class="container">
+	<div class="row">
+		<%= form_for @job do |f| %>
+		<div class="form-group">
+			<%= f.label :job_title %>
+			<%= f.text_field :job_title, class: 'form-control' %>
+		</div>
+		<div class="form-group">
+			<%= f.label :job_description %>
+			<%= f.text_area :job_description, class: 'form-control' %>
+		</div>
+		<div class="form-group">
+			<%= f.label :job_type %>
+			<%= f.text_field :job_type, class: 'form-control' %>
+		</div>
+		<div class="form-group">
+			<%= f.submit class: 'btn btn-primary' %>
+			<%= link_to 'Back', root_path, class: 'btn btn-danger' %>
+		</div>
+		<% end %>
 	</div>
-	<div>
-		<%= f.label :job_description%>
-		<%= f.text_area :job_description %>
-	</div>
-	<div>
-		<%= f.label :job_type%>
-		<%= f.text_field :job_type %>
-	</div>
-	<div>
-		<%= f.submit %>
-	</div>
-	<% end %>
 </div>
